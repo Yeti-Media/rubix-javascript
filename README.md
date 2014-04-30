@@ -23,7 +23,21 @@ Or grab the [source](https://github.com/nsanta/rubix-javascript/dist/rubix.js) (
 Each request method accepts a success and error callbacks. The callbacks accepts one argument: `data`.
 `data` contains the JSON response of rubix.
 
-Example: ` {id: 123, label: 'pattern label', url: '//path/to/pattern/image'} `
+
+Request Example: 
+
+```
+  var client = new Rubix('YOUR_KEY');
+  client.listPatterns(1,function(response){
+    console.log(response);
+  });
+```
+
+Response Example:
+
+`[{id: 123, label: 'pattern label', url: '//path/to/pattern/image'}]`
+
+##Documentation
 
 ### Client Creation
 
@@ -34,14 +48,14 @@ Example: ` {id: 123, label: 'pattern label', url: '//path/to/pattern/image'} `
 ### List Categories
 
 ```
-   var client.listCategories(success, error);
+   client.listCategories(success, error);
 ```
 
 ### List Patterns
 
 ```
    var page = 2;
-   var client.listPattern(2, success, error);
+   client.listPattern(2, success, error);
 ```
 
 `listPatterns` take three parameters: 
@@ -54,9 +68,50 @@ Example: ` {id: 123, label: 'pattern label', url: '//path/to/pattern/image'} `
 
 ```
    var pattern = {"pattern":{"remote_file_url":"http://4.bp.blogspot.com/_MBsiuN6rb40/SxPix57DG9I/AAAAAAAAAG4/suzru0MQcHg/s1600/star-trek-movie-poster.jpg", "category_name":"matching", "label":"startrek"}};
-   var client.create(pattern, success, error);
+   client.createPattern(pattern, success, error);
 
 ```
+
+`createPattern` take three parameters: 
+
+- pattern Object
+  - pattern Object
+    - label: a string for provide a external identifier
+    - category_name: a string for provide the category type
+    - remote_file_url: a string for provide an url that points to the pattern image.
+- success callback
+- error callback
+
+### Update Trainer
+
+```
+   client.updateTrainer(success, error);
+```
+
+
+### Feature Matcher
+
+```
+   var scenario = {"remote_file_url":"http://4.bp.blogspot.com/_MBsiuN6rb40/SxPix57DG9I/AAAAAAAAAG4/suzru0MQcHg/s1600/star-trek-movie-poster.jpg"};
+   client.featureMatcher(scenario, success, error);
+
+```
+- scenario Object
+  - remote_file_url: a string for provide an url that points to the scenario image.
+- success callback
+- error callback
+
+### OCR
+
+```
+   var scenario = {"remote_file_url":"http://read.pudn.com/downloads166/sourcecode/graph/texture_mapping/765713/OCR/OCR/TEST_3.JPG"};
+   client.ocr(scenario, success, error);
+
+```
+- scenario Object
+  - remote_file_url: a string for provide an url that points to the scenario image.
+- success callback
+- error callback
 
 
 ## Contributing
