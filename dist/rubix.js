@@ -1,3 +1,8 @@
+(function(root, undefined) {
+
+  "use strict";
+
+
 /* rubix-javscript main */
 
 // Base function.
@@ -71,3 +76,6 @@ Rubix.VERSION = '0.0.0';
 
 // Export to the root, which is probably `window`.
 root.Rubix = Rubix;
+
+
+}(this));

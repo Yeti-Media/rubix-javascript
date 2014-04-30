@@ -1,7 +1,7 @@
 {
-  "name": "rubix-javscript",
+  "name": "rubix",
   "version": "0.0.0",
-  "main": "dist/rubix-javscript.min.js",
+  "main": "dist/rubix.min.js",
   "description": "Rubix API wrapper in Javascript",
   "repository": {
     "type": "git",

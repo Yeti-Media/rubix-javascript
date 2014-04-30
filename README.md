@@ -1,32 +1,52 @@
-# rubix-javscript
+# Rubix
 
 Rubix API wrapper in Javascript
 
 ## About
 
-A JavaScript library by .
+A JavaScript library by Yeti Media for interact with [Rubix API](https://rubix.3scale.net/).
 
-See the [project homepage](http://nsanta.github.io/rubix-javscript).
+See the [project homepage](http://nsanta.github.io/rubix-javascript).
 
 ## Installation
 
 Using Bower:
 
-    bower install rubix-javscript
+    bower install rubix
 
-Or grab the [source](https://github.com/nsanta/rubix-javscript/dist/rubix-javscript.js) ([minified](https://github.com/nsanta/rubix-javscript/dist/rubix-javscript.min.js)).
+Or grab the [source](https://github.com/nsanta/rubix-javascript/dist/rubix.js) ([minified](https://github.com/nsanta/rubix-javascript/dist/rubix.min.js)).
 
 ## Usage
 
-Basic usage is as follows:
+### Common usage
 
-    rubix-javscript();
+Each request method accepts a success and error callbacks. The callbacks accepts one argument: ```data```.
+```data``` contains the JSON response of rubix.
 
-For advanced usage, see the documentation.
+Example: ``` {id: 123, label: 'pattern label', url: '//path/to/pattern/image'} ```
 
-## Documentation
+### Client Creation
 
-Start with `docs/MAIN.md`.
+   var client = new Rubix('YOUR_USER_KEY');
+
+### List Categories
+
+   var client.listCategories(success, error);
+
+### List Patterns
+   var page = 2;
+   var client.listPattern(2, success, error);
+
+```listPatterns``` take three parameters : page, success  and error callbacks.
+
+### Create Pattern
+   var pattern = {"pattern":{"remote_file_url":"http://4.bp.blogspot.com/_MBsiuN6rb40/SxPix57DG9I/AAAAAAAAAG4/suzru0MQcHg/s1600/star-trek-movie-poster.jpg", "category_name":"matching", "label":"startrek"}};
+   var client.create(pattern, success, error);
+
+
+
+
+
 
 ## Contributing
 

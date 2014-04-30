@@ -34,7 +34,7 @@ module.exports = function(grunt) {
     },
 
     jshint: {
-      files: ['dist/rubix-javscript.js'],
+      files: ['dist/rubix.js'],
       options: {
         globals: {
           console: true,
