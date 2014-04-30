@@ -20,32 +20,43 @@ Or grab the [source](https://github.com/nsanta/rubix-javascript/dist/rubix.js) (
 
 ### Common usage
 
-Each request method accepts a success and error callbacks. The callbacks accepts one argument: ```data```.
-```data``` contains the JSON response of rubix.
+Each request method accepts a success and error callbacks. The callbacks accepts one argument: `data`.
+`data` contains the JSON response of rubix.
 
-Example: ``` {id: 123, label: 'pattern label', url: '//path/to/pattern/image'} ```
+Example: ` {id: 123, label: 'pattern label', url: '//path/to/pattern/image'} `
 
 ### Client Creation
 
+```
    var client = new Rubix('YOUR_USER_KEY');
+```
 
 ### List Categories
 
+```
    var client.listCategories(success, error);
+```
 
 ### List Patterns
+
+```
    var page = 2;
    var client.listPattern(2, success, error);
+```
 
-```listPatterns``` take three parameters : page, success  and error callbacks.
+`listPatterns` take three parameters: 
+
+- page number
+- success callback
+- error callback
 
 ### Create Pattern
+
+```
    var pattern = {"pattern":{"remote_file_url":"http://4.bp.blogspot.com/_MBsiuN6rb40/SxPix57DG9I/AAAAAAAAAG4/suzru0MQcHg/s1600/star-trek-movie-poster.jpg", "category_name":"matching", "label":"startrek"}};
    var client.create(pattern, success, error);
 
-
-
-
+```
 
 
 ## Contributing
